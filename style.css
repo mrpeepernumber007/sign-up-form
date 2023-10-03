@@ -1,0 +1,173 @@
+:root {
+    --bg-color: #f6f6f7f6;
+    --border-color: #d6dbdb;
+    --right-padding: 35px;
+    --scandinavian-green: rgb(84, 115, 91);
+    font-family: sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'norse';
+    src:
+        local('Norse'), 
+        url('https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    /* display: flex;
+    flex-direction: row; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+}
+
+.left-div {
+    /* flex: 1;
+    align-self: left; */
+    background-image: url(/assets/background-image.jpg);
+    background-position: top;
+}
+
+.logo-band {
+    position: relative;
+    top: 20%;
+    background-color: rgba(0,0,0,0.3);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#logo-text {
+    font-family: norse;
+    color: white;
+    font-size: 3rem;
+}
+
+.logo-band img {
+    height: 100%;
+}
+
+.right-div {
+    /* flex: 2; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-color);
+}
+
+li {
+    list-style: none;
+}
+
+fieldset {
+    border: none;
+    position: relative;
+}
+
+#hero {
+    padding: var(--right-padding);
+    font-weight: bold;
+    line-height: 1.3rem;
+}
+
+#hero p {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    max-width: 70%;
+    font-size: larger;
+}
+
+#form-section {
+    padding: var(--right-padding);
+    background-color: white;
+    box-shadow: 1px 3px 5px #a3a3a3;
+}
+
+#form-section p {
+    font-weight: bold;
+    font-size: large;
+    position: relative;
+    top: -20px;
+}
+
+#form-section ul {
+     width: 80%;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1fr, 3);
+}
+
+#form-section li {
+    font-size: .8rem;
+    padding: 5px;
+}
+
+#form-section label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    letter-spacing: .09rem;
+    font-size: smaller;
+    font-weight: 500;
+}
+
+#account-section {
+    padding: var(--right-padding);
+}
+
+input {
+    appearance: none;
+    border-radius: 3px;
+    height: 1.5rem;
+    border: 1px solid var(--border-color);
+    padding: 5px;
+}
+
+input:focus-within {
+    outline: none;
+    border: 2px solid blue;
+    box-shadow: 1px 1px 3px #616060;
+}
+
+input:invalid {
+    outline: none;
+    border: 2px solid red;
+}
+
+.ac-btn {
+    padding: 15px;
+    width: 15rem;
+    background-color: var(--scandinavian-green);
+    border-radius: 7px;
+    color: var(--bg-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 3px #333;
+}
+
+#account-section p {
+    font-weight: 500;
+}
+
+#account-section a {
+    text-decoration: none;
+    color: var(--scandinavian-green);
+}
+
+.failed-pwd-check {
+    border: 2px solid red;
+}

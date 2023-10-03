@@ -9,15 +9,20 @@
 <body>
     <div class="container">
         <div class="left-div">
-            <div class="logo-band"></div>
+            <div class="logo-band">
+                <img src="/assets/odin-lined.png" alt="Odin-logo">
+                <p id="logo-text">odin</p>
+            </div>
         </div>
         <div class="right-div">
             <section id="hero">
-                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
+                <p>Sign up <em>now</em> to get started.</p>
+                <br>
                 <p>You <em>know</em> you want to.</p>
             </section>
             <section id="form-section">
-                <form action="" class="ac-create">
+                <form action="" method="submit" class="ac-create">
                     <fieldset>
                         <p>Let's do this</p>
                         <ul>
@@ -39,21 +44,39 @@
                             </li>
                             <li>
                                 <label for="pwd">PASSWORD</label>
-                                <input type="password" id="pwd" name="userpwd">
+                                <input type="password" id="pwd" name="userpwd" required>
                             </li>
                             <li>
                                 <label for="confirmpwd">CONFIRM PASSWORD</label>
-                                <input type="text" id="confirmpwd" name="confirmpwd">
+                                <input type="password" id="confirmpwd" name="confirmpwd" required>
                             </li>
                         </ul>
                     </fieldset>
                 </form>
             </section>
             <section id="account-section">
-                <button class="create-ac">Create Account</button>
+                <button class="ac-btn">Create Account</button>
                 <p>Already have an account? <a href="#">Log in</a></p>
             </section>
         </div>
     </div>
+    <script>
+        const password = document.querySelector('#pwd')
+        const confirmPwd = document.querySelector('#confirmpwd')
+        const createAccount = document.querySelector('.ac-btn')
+        const userName = document.querySelector('#name')
+        const leftDiv = document.querySelector('.left-div')
+
+        const pwdErrorMessage = document.createElement('p')
+        pwdErrorMessage.textContent = '* Passwords do not match'
+
+        createAccount.addEventListener('click', () => {
+            if (password.value !== confirmPwd.value) {
+                password.classList.add('failed-pwd-check')
+                confirmPwd.classList.add('failed-pwd-check')
+                password.appendChild(pwdErrorMessage)
+            }
+        })
+    </script>
 </body>
 </html>
